@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Customer Page with Safqore AI Chat</title>
+</head>
+<body>
+
+<h1>Welcome to Customer's Website</h1>
+<p>This is an example page where the chat bot uses Hugging Face API.</p>
+
+<!-- Include Hugging Face logic first -->
+<!-- Replace YOUR_HF_API_TOKEN with your actual token -->
+<!-- Replace "gpt2" with the model you want to use -->
+<script 
+  src="./huggingface.js" 
+  data-hf-model="gpt2" 
+  data-hf-token="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"
+  defer>
+</script>
+
+<!-- Include the chat widget after huggingface.js -->
+<script src="./chat-widget.js" defer></script>
+
+</body>
+</html>
