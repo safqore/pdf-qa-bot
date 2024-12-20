@@ -1,14 +1,34 @@
-# pdf-qa-bot
+# pdf-qa-bot / Deployment branch
 
-All of these app have been written in stream lit and expect the user to upload the file
 
-I have not been able to get the langsmith to work. If you want it to work you will need to add your API key to the bash profile with this name `LANGSMITH_API_KEY`
+to run this the expectation is that you will have docker-compose installed.
 
-`ollama.py` expects you to have the ollama cli running and have a model up
-`cohere_hugging_face.py`, i couldn't get the hugging face cohere to work so it is commented out and is using gpt2
+if you don't you can install it with 
 
-`requirements.txt` has all the requirements and should get u up and running, I highly encourage that u set up a virtual env and NOT RUN THIS LOCALLY, numpy lib will mess things up and you will have to try a couple of versions before it works.
+`brew install docker-compose`
 
-TODO: i will add the descriptions of the other files i have added so far
+once thats install all you need to do is
+
+`docker-compose up --build`
+
+depending on your set up, you might get a couple of pop ups you will have to accept for it to install the relevant packages
+
+once this is up and running you will have these three docker containers
+
+```
+pdf-qa-bot-qdrant-1 
+pdf-qa-bot-backend-1
+pdf-qa-bot-frontend-1
+```
+
+once these are up and running the front end will auto open in your browser, incase it doesn't it can be accessed at 
+
+http://localhost:3000/
+
+this is a plain react / node website with a bot widget / script sending what ever is written in the text box to 
+
+http://localhost:8000/query
+
+This is a POST and the response back is whatever was sent to it
 
 
